@@ -20,7 +20,7 @@ import { Video } from 'expo-av';
 
 - Once you have your signaling server set up, you'll need to create an RTCPeerConnection and set up the event listeners:
 
-![Alt text](../1.png)
+![Alt text](./1.png)
 
 - You'll also need a function for sending messages over your signaling server. This will be different depending on how you have set up your signaling server, but the basic idea is to send a message containing the SDP or ICE candidate data to the other client.
 
