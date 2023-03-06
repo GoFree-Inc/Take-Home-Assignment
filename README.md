@@ -36,7 +36,7 @@ function sendMessage(message) {
 
 Certainly! Here are the remaining functions that you'll need to complete the implementation of video and audio calling in your chat app using Expo, React Native, and WebRTC:
 
-![Alt text](../2.png)
+![Alt text](./2.png)
 
 - You'll also need to set up event listeners on your signaling server to handle incoming messages from the other client. Depending on the type of message, you'll need to call the appropriate function to handle the offer, answer, ICE candidate, or bye message.
 
@@ -87,7 +87,7 @@ async function startVideoCall() {
 
 - You'll also need to set up event listeners on the Socket.io client to handle incoming messages from the other client. Depending on the type of message, you'll need to call the appropriate function to handle the offer, answer, ICE candidate, or bye message:
 
-![Alt text](../3.png)
+![Alt text](./3.png)
 
 ### can you write the server side implementation as well using coturn and socket io ?
 
@@ -122,7 +122,7 @@ const socketServer = io.listen(3000);
 
 - Set up event listeners on the Socket.io server to handle offers, answers, and ICE candidates
 
-![Alt text](../4.png)
+![Alt text](./4.png)
 
 - You'll also need to set up a function for sending messages over the Socket.io server. This will be different depending on how you have set up your chat app, but the basic idea is to send a message containing the SDP or ICE candidate data to the other client:
 
@@ -138,7 +138,7 @@ Certainly! Here is how you can modify the client-side code that I provided earli
 
 - First, you'll need to import the Socket.io client library and create a Socket.io client:
 
-![Alt text](../5.png)
+![Alt text](./5.png)
 
 ### how do I host the server side code and connect the client side app to it ?
 
@@ -223,7 +223,7 @@ socket.on('call', (data) => {
 
 To implement the UI for an incoming call and allow the user to pick the call, you'll need to set up event listeners on the Socket.io client to handle the incoming call request and update the UI accordingly. Here is an example of how you could do this:
 
-![Alt text](../6.png)
+![Alt text](./6.png)
 
 This code will show an incoming call notification with an "Answer" and "Decline" button when an incoming call request is received. When the user clicks the "Answer" button, the client will send an "answer" event to the Socket.io server to accept the call. When the user clicks the "Decline" button, the client will send a "decline" event to the Socket.io server to decline the call.
 
@@ -248,7 +248,7 @@ Implementing these and other advanced features will require additional developme
 
 Certainly! Here is an example of how you could modify the client-side code to implement the advanced features you listed:
 
-![Alt text](../7.png)
+![Alt text](./7.png)
 
 This code will display a call screen with a mute switch, a speaker switch, a video toggle button, and a hang up button. The user can toggle the mute and speaker switches to control their audio during the call, toggle the video stream, and hang up the call by clicking the respective buttons.
 
@@ -276,7 +276,7 @@ io.on('connection', (socket) => {
 
 Certainly! Here is an example of how you could further modify the server-side code to handle the other call events:
 
-![Alt text](../8.png)
+![Alt text](./8.png)
 
 This code sets up event listeners for the "mute", "speaker", and "hangup" events, and updates the call state and the client UI accordingly.
 
@@ -314,13 +314,13 @@ I hope this gives you an idea of how you could implement these additional advanc
 
 Certainly! Here is an example of how you could implement group calls and call history on the client-side using Expo React Native:
 
-![Alt text](../9.png)
+![Alt text](./9.png)
 
 This code adds a "Start Group Call" button and a list of the call history to the chat screen. The user can click the "Start Group Call" button to initiate a group call with the selected users, and view their call history by scrolling through the list.
 
 Here is an example of how you could modify the server-side code to handle the new events:
 
-![Alt text](../10.png)
+![Alt text](./10.png)
 
 This code updates the call state and call history when the "hangup" event is received, and emits the appropriate events to the clients to update their UI.
 
@@ -332,13 +332,13 @@ For example, you may want to add additional UI elements to the client-side code 
 
 Certainly! Here is an example of how you could implement call notifications and call waiting on the client-side using Expo React Native:
 
-![Alt text](../11.png)
+![Alt text](./11.png)
 
 This code adds an alert to the chat screen that is displayed when an incoming call is received, and gives the user the option to accept or decline the call. It also displays a list of waiting calls if there are any.
 
 Here is an example of how you could modify the server-side code to handle the new events:
 
-![Alt text](../12.png)
+![Alt text](./12.png)
 
 This code handles the "acceptCall", "declineCall", and "callWaiting" events and updates the call state and UI accordingly.
 
@@ -358,13 +358,13 @@ These are just a few examples, and there are many other possibilities for enhanc
 
 - Sure! Here is an example of how you could implement call recording on the client-side using Expo React Native:
 
-![Alt text](../13.png)
+![Alt text](./13.png)
 
 This code allows the user to start and stop recording using the MediaRecorder API, and sends the recording file URI to the server when the recording is stopped.
 
 - Here is an example of how you could modify the server-side code to handle the new events:
 
-![Alt text](../14.png)
+![Alt text](./14.png)
 
 This code handles the "startRecording", "stopRecording", and "recording" events and updates the call state accordingly.
 
@@ -380,7 +380,7 @@ Here are some example implementations for the other features that I mentioned ea
 
 To implement call hold on the client-side, you could use the RTCPeerConnection API's addTrack and removeTrack methods to add and remove audio tracks from the connection. Here is an example of how you could do this:
 
-![Alt text](../15.png)
+![Alt text](./15.png)
 
 To implement call hold on the server-side, you could simply update the call state to reflect the hold status and emit an event to all clients to update their UI accordingly. Here is an example of how you could do this:
 
@@ -402,7 +402,7 @@ callState.isOnHold = !callState.isOnHold;
 
 To implement call transfer on the client-side, you could use the RTCPeerConnection API's close method to close the current connection and create a new connection to the new callee. Here is an example of how you could do this:
 
-![Alt text](../16.png)
+![Alt text](./16.png)
 
 To implement call transfer on the server-side, you could update the call state to reflect the new callee and emit events to the clients to update their connections and UI accordingly. Here is an example of how you could do this:
 
@@ -435,7 +435,7 @@ Here are some example implementations for the other features that I mentioned ea
 
 To implement mute audio on the client-side, you could use the MediaStreamTrack API's enabled property to toggle the audio track's enabled state. Here is an example of how you could do this:
 
-![Alt text](../17.png)
+![Alt text](./17.png)
 
 To implement mute audio on the server-side, you could simply update the call state to reflect the mute status and emit an event to all clients to update their UI accordingly. Here is an example of how you could do this:
 
@@ -456,7 +456,7 @@ io.on('connection', (socket) => {
 
 To implement mute video on the client-side, you could use the MediaStreamTrack API's enabled property to toggle the video track's enabled state. Here is an example of how you could do this:
 
-![Alt text](../18.png)
+![Alt text](./18.png)
 
 To implement mute video on the server-side, you could simply update the call state to reflect the mute status and emit an event to all clients to update their UI accordingly. Here is an example of how you could do this:
 
@@ -482,11 +482,11 @@ To implement group chat in your chat app, you'll need to update your server-side
 
 On the server-side:
 
-![Alt text](../19.png)
+![Alt text](./19.png)
 
 On the client-side:
 
-![Alt text](../20.png)
+![Alt text](./20.png)
 
 - Call quality indicators
 
@@ -494,7 +494,7 @@ To implement call quality indicators in your chat app, you'll need to track the 
 
 On the client-side:
 
-![Alt text](../21.png)
+![Alt text](./21.png)
 
 ### can you listed all the advance features of WhatsApp video/audio calling ?
 
@@ -673,10 +673,10 @@ Here is an example of how this might look in code:
 
 - Client-side (caller):
 
-![Alt text](../22.png)
+![Alt text](./22.png)
 
 Server-side:
 
-![Alt text](../23.png)
+![Alt text](./23.png)
 
 This example demonstrates how you might use Socket.io to send signaling messages between the clients and the server, and use the WebRTC PeerConnection API to establish a connection and exchange audio and video data.
